@@ -10,7 +10,7 @@ class App < Sinatra::Base
 
   configure do
     enable  :logging
-    set     :weixin_token, "2646743010"
+    set     :weixin_token, ""
     set     :weixin_uri,   "http://yaoyaohuahuapangpang.cloudfoundry.com/"
   end
 
