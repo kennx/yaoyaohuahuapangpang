@@ -20,9 +20,11 @@ class App < Sinatra::Base
 
   post "#{settings.weixin_path}" do
     if generate_signature == params[:signature]
-      msg = message_receiver(request.body)
+      weixin = message_receiver(request.body)
       weixin.sender(:msg_type => "text") do |msg|
         msg.content = "Hello"
+        msg.complete!
+        msg.to_xml
       end
     end
   end
